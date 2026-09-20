@@ -1,0 +1,7 @@
+# 截图/自检产物
+_shots/
+_backup/
+
+# 依赖与系统
+node_modules/
+.DS_Store
