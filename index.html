@@ -788,7 +788,7 @@ function buildHome(){
     b.onclick=()=>{chosenCount=n; buildHome();};
     row.appendChild(b);
   }
-  $('startBtn').onclick=startGame;
+  $('startBtn').onclick=()=>startGame();
 }
 
 /* ==================== 初始化游戏 ==================== */
@@ -830,7 +830,7 @@ function renderTop(){
   const p=curPlayer();
   $('curDot').outerHTML=`<img class="p-avatar" id="curDot" src="${AVATAR[p.avatar]}" alt="" style="width:26px;height:26px">`;
   $('turnText').innerHTML = `轮到 <b>${p.name}</b>`;
-  const phaseMap={exchange:'交换阶段', rolling:'掷骰中…', resolved:'结算阶段', over:'游戏结束'};
+  const phaseMap={exchange:'交换阶段', rolling:'掷骰中…', resolved:'结算阶段', over:'游戏结束', draft:'选卡阶段'};
   $('phaseTag').textContent = phaseMap[state.phase]||'';
   const wtag=$('weatherTag');
   if(state.weather && state.weather.type){
@@ -1264,5 +1264,10 @@ function gameOver(){ location.reload(); }
 /* ==================== 启动 ==================== */
 buildHome();
 </script>
+<script src="config.js"></script>
+<script src="online.js"></script>
 </body>
 </html>
+
+
+

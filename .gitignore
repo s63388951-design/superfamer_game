@@ -5,3 +5,4 @@ _backup/
 # 依赖与系统
 node_modules/
 .DS_Store
+.wrangler/
